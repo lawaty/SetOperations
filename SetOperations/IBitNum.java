@@ -9,7 +9,7 @@ public interface IBitNum {
    * returns the value at index `index`
    * 
    */
-  public boolean getBit(int index);
+  public boolean getBit(int number,int index);
   /**
    * returns a clone of the current object with the same content. Must return a pointer to a new object
    */

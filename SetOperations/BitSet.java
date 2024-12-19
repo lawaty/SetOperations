@@ -3,7 +3,8 @@ package SetOperations;
 import java.util.List;
 import java.util.ArrayList;
 
-public class BitSet {
+
+public class BitSet  {
   private Universe universe;
   private IBitNum num;
 
@@ -66,7 +67,7 @@ public class BitSet {
     ArrayList<String> result = new ArrayList<String>();
 
     for(int i = 0; i < universe.size(); i++)
-      if (this.num.getBit(i))
+      if (this.num.getBit(this.num.getDecimal(),i))
         result.add(universe.at(i));
 
     return result;

@@ -10,13 +10,35 @@ public class BitNumStub implements IBitNum {
 
   @Override
   public void updateBit(int index, int val) {
-    // Stub implementation
+     if(val == 1){
+      bits = setBit(bits,index);
+     }else{
+      bits = clearBit(bits,index);
+     }
   }
 
   @Override
-  public boolean getBit(int index) {
-    // Stub implementation
-    return false;
+  public boolean getBit(int number,int index) {
+    int compare = 1 << index;
+    return (number & compare) != 0;
+   
+  }
+  public int setBit(int number,int index){
+    int compare = 1 << index;
+    number |= compare;
+    return number;
+    }
+  public int clearBit(int number,int index){
+    int compare = 1 << index;
+    number &= ~compare;
+    return number;
+  }
+  public int updateBit(int number,int index,int val){
+    if(val == 1){
+      return setBit(number,index);
+    }else{
+      return clearBit(number,index);
+    }
   }
 
   @Override
