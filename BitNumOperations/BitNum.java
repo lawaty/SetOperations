@@ -10,29 +10,28 @@ public class BitNum implements IBitNum {
   @Override
   public int getBit(int pos) {
     int bitmask = 1 << pos;
-    if ((num & bitmask) % 2 == 0) {
-      return 0;
-    } else {
-      return 1;
-    }
+    return (num & bitmask) != 0 ? 1 : 0;
   }
 
-  public int setBit(int pos) {
+  public void setBit(int pos) {
     int bitmask = 1 << pos;
-    return num | bitmask;
+    num |= bitmask;
   }
 
-  public int clearBit(int pos) {
+  public void clearBit(int pos) {
     int bitmask = 1 << pos;
-    return num & ~bitmask;
+    num &= ~bitmask;
   }
+
 
   @Override
   public int updateBit(int pos, int value) {
     if (value == 0) {
-      return clearBit(pos);
+      clearBit(pos);
+      return num;
     } else {
-      return setBit(pos);
+      setBit(pos);
+      return num;
     }
   }
 

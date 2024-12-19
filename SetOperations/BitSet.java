@@ -65,12 +65,13 @@ public class BitSet  {
     return result;
   }
 
-  public List getElements() {
-    ArrayList<String> result = new ArrayList<String>();
+  public List<String> getElements() {
+    List<String> result = new ArrayList<String>();
 
-    for(int i = 0; i < universe.size(); i++)
+    for (int i = 0; i < universe.size(); i++){
       if (this.num.getBit(i) == 1)
         result.add(universe.at(i));
+    }
 
     return result;
   }

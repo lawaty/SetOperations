@@ -33,4 +33,10 @@ public class Universe {
       throw new IndexOutOfBoundsException("Index out of bounds");
     }
   }
+
+  @Override
+  public String toString() {
+    return "{" + String.join(", ", elements) + "}";
+  }
+
 }
