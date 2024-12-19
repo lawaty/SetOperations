@@ -1,15 +1,15 @@
-package SetOperations;
+package BitNumOperations;
 
 public interface IBitNum {  
   /**
    * sets the bit at index `index`
    */
-  public void updateBit(int index, int val);
+  public int updateBit(int index, int val);
   /* 
    * returns the value at index `index`
    * 
    */
-  public boolean getBit(int number,int index);
+  public int getBit(int index);
   /**
    * returns a clone of the current object with the same content. Must return a pointer to a new object
    */
