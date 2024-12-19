@@ -117,8 +117,6 @@ public class part2 {
     String[] elements = scanner.nextLine().split("\\s+");
     for (String elem : elements)
       universe.add(elem);
-
-    System.out.println("Universe: " + universe);
   }
 
   private void readSets() {
@@ -136,10 +134,6 @@ public class part2 {
 
       sets.add(set);
     }
-
-    System.out.println("Sets:- ");
-    for(BitSet set: sets)
-      System.out.println(set.getElements());
   }
 
   private boolean isValidIndex(int index) {

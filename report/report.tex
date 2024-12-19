@@ -4,12 +4,82 @@
 
 \begin{document}
 
-\vfill
-
-\imp{Abdelrahman Elsayed} 
+\topic{Lab 3: Set operations using bitwise operations}
 
 \vfill
 
+\imp{Abdelrahman Elsayed Saeed Saad} 
+\hfill 
+\imp{22010869}
+~\\~\\~\\
+\imp{Abdelrahman Fat'hy Ahmed El-Lawaty} 
+\hfill 
+\imp{19015920}
 
+
+\vfill
+
+\newpage
+\hI{Part 1}
+\hII{Requirements}
+This part focuses on implementing a unit to handle the basic bitwise operations to be used in the set operations later. Here are the required operations: \\
+\begin{enumerate}
+  \item getBit(int number, int position): returns the bit value at position \textit{position}'.
+  \item setBit(int number, int position): sets the bit at position \textit{position}'
+  \item clearBit(int number, int position): clears the bit at position \textit{position}.
+  \item updateBit(int number, int position, boolean value): sets the value `value` for the bit at position \textit{position}.
+\end{enumerate}
+
+\hII{Solution Design}
+\idiom{BitNumOperations} package contains \idiom{BitNum} data structure that implements all the required operations in addition to some more to be used in set operations.\\
+
+\hIIIn{Data Structures} 
+\begin{enumerate}
+  \item 32-bit primitive integer to hold the decimal value of the BitNum.
+  \item User-defined BitNum DS to implement all bit operations dynamically.
+\end{enumerate}
+
+\newpage
+
+\hII{Demo Runs}
+\idiom{part1.java} implements a demo run with some test cases assserted at run time as shown in figure.\\~\\
+\fig[0.8][0.3]{"Part1.png"}{Bitwise Operations Sample Run}
+
+\newpage
+
+\hI{Part 2}
+
+\hII{Requirements}
+Using the BitNum data structure we have built earlier, it is required to prompt some sets from the user and implement some set operations on them. The universe will first be prompted as a \imp{list of strings} and \imp{use the BitNum data structure to store the elements in each set} as a bit map for it. \\
+
+\hII{Solution Design}
+\idiom{BitSet} is another data structure that is coupled with the BitNum Class through its interface IbitNum to store the elements as a bitmap. It also stores the \idiom{Universe} inside to be able perform set operations like complement and others. \\
+
+\idiom{Universe} is a simple data structure holds all the Sample space elements in an ArrayList. It provides some operation to traverse the universe elements and stuff like that. Here are all the implemented functionalities inside BitSet. \\
+
+\begin{enumerate}
+  \item add(String element): Adds an element to the set.
+  \item union(BitSet otherSet): returns a set of all elements inside both sets.
+  \item intersection(BitSet otherSet): returns a set of elements that exist in both sets.
+  \item difference(BitSet otherSet): returns a set of all elements inside the first set and not in the other
+  \item complement(): returns a new set of all elements in the universe that are outside the set
+  \item cardinality(): returns the number of elements in the set.
+  \item getElements(): returns a List<string> of all elements in the set.
+\end{enumerate}
+
+\newpage
+\hII{Test Runs}
+\fig[1][0.4]{"test1.png"}{Union}
+\fig[1][0.4]{"test2.png"}{Intersection}
+\fig[1][0.4]{"test3.png"}{Complement}
+\fig[1][0.4]{"test4.png"}{Difference + Cardinality}
+\clearpage
+\fig[1][0.4]{"test5.png"}{{Print + Exit}}
+
+\vfill
+\huge
+\centering
+\idiom{Thank You}
+\vfill
 
 \end{document}
